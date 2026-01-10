@@ -133,7 +133,7 @@ The video game industry has evolved into a dominant force in global entertainmen
 
 This explosion of User-Generated Content (UGC) has fundamentally shifted how games are marketed and consumed. Research indicates that up to 93\% of consumers find UGC helpful when making purchasing decisions, and approximately 70\% of gamers consult reviews or ratings before buying a title \cite{stackla2019}. Platforms like Metacritic have emerged as central hubs for this ecosystem, where a game's aggregate score (Metascore) can determine its commercial success, influence stock prices, and even dictate the financial bonuses of development teams \cite{wingfield2007}.
 
-However, the sheer velocity and volume of this data present a significant challenge. A single popular game release can generate tens of thousands of reviews in a matter of days. These reviews range from detailed, multi-paragraph critiques to slang-filled one-liners (e.g., ``This game is buggy but the combat is fire''). Manual analysis of this unstructured text is impossible at scale. Consequently, automated ``Opinion Mining''—or Sentiment Analysis—has transitioned from an academic curiosity to an industrial necessity. It allows developers and publishers to monitor brand health, identify critical bugs, and quantify player satisfaction in real-time.
+However, the sheer velocity and volume of this data present a significant challenge. A single popular game release can generate tens of thousands of reviews in a matter of days. These reviews range from detailed, multi-paragraph critiques to slang-filled one-liners (e.g., ``This game is buggy but the combat is fire''). Manual analysis of this unstructured text is impossible at scale. Consequently, automated ``Opinion Mining'' (or Sentiment Analysis) has transitioned from an academic curiosity to an industrial necessity. It allows developers and publishers to monitor brand health, identify critical bugs, and quantify player satisfaction in real-time.
 
 
 \subsection{Problem Statement}
@@ -227,7 +227,7 @@ For this project, we utilize \textbf{RoBERTa} (Robustly Optimized BERT Pretraini
 \end{itemize}
 
 \subsubsection{Fine-Tuning Strategy}
-Instead of training a Transformer from scratch—which requires massive computational resources—we employ \textbf{Transfer Learning}. We initialize the model with pre-trained weights learned from a massive corpus and fine-tune it on our game review dataset.
+Instead of training a Transformer from scratch, which requires massive computational resources, we employ \textbf{Transfer Learning}. We initialize the model with pre-trained weights learned from a massive corpus and fine-tune it on our game review dataset.
 
 Mathematically, given the final hidden vector $h_{CLS}$ corresponding to the special classification token (representing the entire sentence), the probability distribution over the sentiment classes $y$ is computed by passing $h_{CLS}$ through a linear classification head:
 
@@ -307,7 +307,7 @@ The spider, located in \texttt{metacritic\_scraper/spiders/}, operates as follow
     \begin{itemize}
         \item \textbf{Review Text:} The body of the user's comment.
         \item \textbf{User Score:} The numerical rating (0-10 scale, normalized to 0-100 for consistency).
-        \item \textbf{Review Category:} Extracted directly from Metacritic's color-coded sentiment badges—positive (green, $\geq$75), mixed (yellow, 50-74), or negative (red, $<$50)—which represent Metacritic's domain-expert classification of review sentiment.
+        \item \textbf{Review Category:} Extracted directly from Metacritic's color-coded sentiment badges: positive (green, $\geq$75), mixed (yellow, 50-74), or negative (red, $<$50), which represent Metacritic's domain-expert classification of review sentiment.
         \item \textbf{Review Platform:} The specific platform for which the review was written, extracted at the individual review level.
         \item \textbf{Date:} The submission date of the review.
         \item \textbf{Username:} Identifier for the reviewer.
@@ -359,7 +359,7 @@ The first phase conducts exhaustive hyperparameter search using a subset of the 
 \begin{itemize}
     \item \textbf{Data Partitioning:} Grid search uses only training and validation splits (typically 10\% for computational efficiency). The test set remains completely untouched to prevent information leakage.
     \item \textbf{Evaluation Protocol:} Models are trained on the training subset and evaluated exclusively on the validation set using F1-macro score as the primary optimization metric, ensuring equal importance for all sentiment categories (positive, mixed, negative).
-    \item \textbf{Hyperparameter Space:} Each model explores its relevant hyperparameter space—learning rates, regularization strengths, architectural choices—with results automatically saved to \texttt{best\_config.txt}. These exploration models are not uploaded to HuggingFace Hub.
+    \item \textbf{Hyperparameter Space:} Each model explores its relevant hyperparameter space (learning rates, regularization strengths, architectural choices) with results automatically saved to \texttt{best\_config.txt}. These exploration models are not uploaded to HuggingFace Hub.
     \item \textbf{Output:} The configuration achieving the highest validation F1-macro score is identified and logged, along with comprehensive grid search results in \texttt{gridsearch\_results.json}.
 \end{itemize}
 
@@ -1052,7 +1052,7 @@ The XGBoost model demonstrated robust performance, achieving an overall \textbf{
 
 All three models were evaluated on the same held-out test set ($n = 78{,}737$) with the same class distribution: Positive $58.24\%$ ($45{,}859$), Negative $25.63\%$ ($20{,}181$), Mixed $16.13\%$ ($12{,}697$).
 
-\subsection{Overall metrics (global)}
+\subsection{Overall metrics}
 
 \begin{table}[H]
 \centering
@@ -1076,12 +1076,12 @@ All three models were evaluated on the same held-out test set ($n = 78{,}737$) w
 \label{tab:model_overall_metrics}
 \end{table}
 
-Overall, the results show a clear trade-off between predictive quality (Acc, weighted and macro Precision/Recall/F1) and efficiency (throughput and training time). RoBERTa consistently leads on the performance metrics—both weighted averages and the more class-balanced macro averages—suggesting stronger generalization and better robustness across classes, but it is also the least efficient in both inference speed and training time. Its inference throughput is only ~74 samples/s and fine-tuning takes about 31 hours on our hardware, compared with 9 hours for the LSTM and 9 minutes for EmbeddingGemma + XGBoost. EmbeddingGemma + XGBoost provides a solid middle ground, with competitive scores on the same metrics while remaining much faster to train and reasonably efficient at inference. LSTM lags behind the other two models on predictive quality, but it stands out in inference throughput, processing nearly 1,900 samples/s. The training-time comparison should still be interpreted with caution, since the models were trained with different epoch budgets (20 epochs for LSTM vs. 5 for RoBERTa), so the reported times reflect both the computational cost per update and the chosen optimization budget.
+Overall, the results show a clear trade-off between predictive quality (Acc, weighted and macro Precision/Recall/F1) and efficiency (throughput and training time). RoBERTa consistently leads on the performance metrics, suggesting stronger generalization and better robustness across classes, but it is also the least efficient in both inference speed and training time. Its inference throughput is only ~74 samples/s and fine-tuning takes about 31 hours on our hardware, compared with 9 hours for the LSTM and 9 minutes for EmbeddingGemma + XGBoost. EmbeddingGemma + XGBoost provides a solid middle ground, with competitive scores on the same metrics while remaining much faster to train and reasonably efficient at inference. LSTM lags behind the other two models on predictive quality, but it stands out in inference throughput, processing nearly 1,900 samples/s. The training-time comparison should still be interpreted with caution, since the models were trained with different epoch budgets (20 epochs for LSTM vs. 5 for RoBERTa), so the reported times reflect both the computational cost per update and the chosen optimization budget.
 
 \subsection{Per-class analysis (Metrics + Confusion matrices)}
 
 \noindent\textbf{Per-class performance (Precision / Recall / F1).}
-Table~\ref{tab:per_class_metrics} reports per-class Precision, Recall, and F1 on the test set for all models. Overall, all models perform strongly on \textbf{Positive} and \textbf{Negative} sentiment, while \textbf{Mixed} remains the most challenging class with noticeably lower Precision/Recall/F1. RoBERTa is the most consistent across classes, achieving the best overall balance—especially improving Mixed-class F1—while EmbeddingGemma + XGBoost shows a stronger trade-off between precision and recall depending on the class (notably weaker recall for Mixed). LSTM is competitive on the major classes but struggles most on Mixed, suggesting it benefits less from nuanced or ambiguous examples compared to RoBERTa.
+Table~\ref{tab:per_class_metrics} reports per-class Precision, Recall, and F1 on the test set for all models. Overall, all models perform strongly on \textbf{Positive} and \textbf{Negative} sentiment, while \textbf{Mixed} remains the most challenging class with noticeably lower Precision/Recall/F1. RoBERTa is the most consistent across classes, achieving the best overall balance, while EmbeddingGemma + XGBoost shows a stronger trade-off between precision and recall depending on the class (notably weaker recall for Mixed). LSTM is competitive on the major classes but struggles most on Mixed, suggesting it benefits less from nuanced or ambiguous examples compared to RoBERTa.
 
 \begin{table}[H]
 \centering
@@ -1165,9 +1165,7 @@ x y z
 \label{tab:cm_lstm}
 \end{table}
 
-
-Mixed $16.71\%$ predicted vs.\ $16.13\%$ actual ($+0.59$ pp), Negative $26.05\%$ vs.\ $25.63\%$ ($+0.42$ pp), Positive $57.24\%$ vs.\ $58.24\%$ ($-1.01$ pp).
-It classifies Positive well, but Mixed is frequently confused with both Negative and Positive, indicating Mixed is the hardest class. The predicted class distribution slightly overestimates Mixed/Negative and underestimates Positive.
+It can be seen that the predicted proportions for Mixed ($16.71\%$ vs. $16.13\%$ actual, $+0.59$ pp) and Negative ($26.05\%$ vs. $25.63\%$, $+0.42$ pp) are slightly overestimated, while Positive ($57.24\%$ vs.\ $58.24\%$) is underestimated by $1.01$ pp. Even though the model classifies the \textit{Positive} class effectively, the matrix highlights significant leakage between \textit{Mixed} and the other two polarities, confirming that the neutral-ambiguous nature of the \textit{Mixed} class remains the primary source of error.
 
 \noindent\textbf{(B) EmbeddingGemma + XGBoost}
 \begin{table}[H]
@@ -1219,9 +1217,7 @@ x y z
 \label{tab:cm_xgboost}
 \end{table}
 
-
-Mixed $12.46\%$ predicted vs.\ $16.13\%$ actual ($-3.67$ pp), Negative $28.25\%$ vs.\ $25.63\%$ ($+2.62$ pp), Positive $59.29\%$ vs.\ $58.24\%$ ($+1.05$ pp).
-It strongly under-predicts Mixed, shifting many Mixed samples into Negative and Positive, and tends to over-predict Negative. Overall, it is conservative on Mixed and biased toward labeling ambiguous cases as Negative.
+As shown in Table~\ref{tab:cm_xgboost}, the XGBoost model exhibits a conservative bias toward the \textit{Mixed} class, under-predicting its occurrence by $3.67$ pp ($12.46\%$ predicted vs.\ $16.13\%$). This shortfall is largely redistributed to the \textit{Negative} class ($28.25\%$ vs.\ $25.63\%$, $+2.62$ pp) and \textit{Positive} class ($59.29\%$ vs.\ $58.24\%$, $+1.05$ pp). These results suggest that the model tends to default to polarized labels when faced with the high-dimensional complexity of \textit{Mixed} sentiment embeddings.
 
 \noindent\textbf{(C) RoBERTa (fine-tuned)}
 \begin{table}[H]
@@ -1273,11 +1269,8 @@ x y z
 \label{tab:cm_roberta}
 \end{table}
 
-Mixed $15.24\%$ predicted vs.\ $16.13\%$ actual ($-0.89$ pp), Negative $25.81\%$ vs.\ $25.63\%$ ($+0.18$ pp), Positive $58.96\%$ vs.\ $58.24\%$ ($+0.71$ pp). 
-It shows the cleanest separation overall, with a stronger diagonal—especially for Mixed—and fewer cross-class confusions than the other models. Its predicted distribution is closest to the true distribution, although Mixed remains the most challenging class.
-
+The fine-tuned RoBERTa model achieves the most balanced performance, with a predicted distribution that closely mirrors the ground truth (deviations of $-0.89$ pp for \textit{Mixed}, $+0.18$ pp for \textit{Negative}, and $+0.71$ pp for \textit{Positive}). The resulting matrix demonstrates a significantly sharper diagonal, particularly for the \textit{Mixed} category, indicating that transformer-based attention mechanisms are better equipped to resolve the linguistic nuances that distinguish mixed sentiments from purely positive or negative ones.
 \FloatBarrier
-
 
 
 
@@ -1392,7 +1385,7 @@ The underlying issue is that LSTM detects mixed signals but fails to integrate t
       \item problematic releases are insufficiently flagged (weaker QA / trust-and-safety signals).
     \end{itemize}
 
-  \item \textbf{Unreliable aggregate metrics on high-value content.} Sentiment summaries derived from the LSTM become least trustworthy on nuanced, thoughtful reviews—the very content most valuable for product and market insights.
+  \item \textbf{Unreliable aggregate metrics on high-value content.} Sentiment summaries derived from the LSTM become least trustworthy on nuanced, thoughtful reviews.
 
   \item \textbf{Architecture implication.} Since both RoBERTa and EmbeddingGemma + XGBoost handle these same cases better, the LSTM setup here appears ill-suited for document-level sentiment:
     \begin{itemize}
