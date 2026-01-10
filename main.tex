@@ -194,6 +194,9 @@ Another significant issue is the structural complexity of game reviews. Unlike p
 
 \subsection{Recurrent Neural Networks and Long Short-Term Memory}
 
+\paragraph{Motivation}
+The LSTM approach serves as a \textbf{conventional baseline} for this project, representing the traditional deep learning paradigm before the widespread adoption of pre-trained language models. By training an LSTM network from scratch with randomly initialized embeddings, we establish a performance benchmark that relies solely on the domain-specific training data without leveraging external pre-trained knowledge. This allows us to quantify the incremental value provided by modern pre-trained architectures (RoBERTa) and hybrid approaches (EmbeddingGemma + XGBoost). Furthermore, LSTMs remain relevant in resource-constrained scenarios where model interpretability and deployment simplicity are prioritized over absolute performance.
+
 Recurrent Neural Networks (RNNs) are designed to process sequential data but often struggle with the vanishing gradient problem, limiting their ability to learn long-term dependencies in text. To address this, Hochreiter and Schmidhuber \cite{hochreiter1997long} introduced Long Short-Term Memory (LSTM) networks, which utilize gating mechanisms to selectively retain or discard information over long sequences.
 
 The information flow within an LSTM cell is regulated by the following transition functions:
@@ -214,6 +217,9 @@ To capture context from both preceding and succeeding words, this project utiliz
 
 
 \subsection{Large Language Models (LLMs) and Fine-tuning Strategies}
+
+\paragraph{Motivation}
+The RoBERTa approach represents the \textbf{state-of-the-art paradigm} in transfer learning for NLP tasks. Gaming reviews present unique challenges—including domain-specific slang (``nerf,'' ``grind,'' ``meta''), sarcasm, and complex multi-aspect opinions—that require deep contextual understanding beyond what surface-level features can capture. By fine-tuning a pre-trained Transformer model, we leverage billions of tokens of linguistic knowledge encoded during pre-training, then adapt this understanding to the gaming domain through task-specific fine-tuning. This approach is expected to achieve the highest classification performance due to its ability to model long-range dependencies, contextual nuances, and subtle semantic distinctions. However, this performance comes at the cost of substantial computational requirements and longer training times, making it important to evaluate whether the performance gains justify the resource investment.
 
 While LSTMs improved sequential modeling, they remain constrained by their sequential nature, which precludes parallelization and limits the retention of context in very long sequences. The introduction of the Transformer architecture by Vaswani et al. \cite{vaswani2017attention} revolutionized NLP by utilizing the \textbf{Self-Attention Mechanism}, allowing models to weigh the importance of all words in a sentence simultaneously, regardless of their distance from each other.
 
@@ -238,6 +244,9 @@ P(y|x) = \text{softmax}(W_{task} \cdot h_{CLS} + b_{task})
 \noindent where $W_{task}$ and $b_{task}$ are the parameters specific to the sentiment classification layer that are updated during fine-tuning, while the underlying RoBERTa weights are fine-tuned at a lower learning rate.
 
 \subsection{Dense Vector Representations and Gradient Boosting}
+
+\paragraph{Motivation}
+The EmbeddingGemma + XGBoost pipeline represents a \textbf{pragmatic hybrid approach} that balances performance with computational efficiency. While fine-tuning large language models yields excellent results, it requires significant GPU resources and time for every training iteration. By decoupling semantic understanding (via pre-trained embeddings) from classification (via gradient boosting), we achieve several strategic advantages: (1) embeddings can be computed once and reused across multiple experiments, (2) XGBoost training is orders of magnitude faster than Transformer fine-tuning, enabling rapid hyperparameter exploration, and (3) the model footprint is dramatically smaller, facilitating deployment in resource-constrained production environments. This approach tests the hypothesis that modern embedding models have become sufficiently powerful that a sophisticated classical classifier can match or approach the performance of end-to-end neural models, while offering superior training efficiency and interpretability through feature importance analysis.
 
 While end-to-end deep learning models like RoBERTa are powerful, they are computationally expensive. An alternative approach is to decouple the \textit{understanding} of text from the \textit{classification} task. This involves using a pre-trained Large Language Model purely as a feature extractor to generate high-quality ``embeddings,'' which are then fed into a highly efficient structured data classifier.
 
@@ -1524,6 +1533,22 @@ The underlying issue is that EmbeddingGemma + Xgboost, despite its semantic embe
             \item LSTM Baseline: \href{https://huggingface.co/auphong2707/wm-grsa-lstm-baseline-results}{Model Link}
             \item Embedding Gemma + XGBoost: \href{https://huggingface.co/auphong2707/wm-grsa-eg-xgboost-results}{Model Link}
             \item Finetuned RoBERTa: \href{https://huggingface.co/auphong2707/wm-grsa-roberta-softmax-results}{Model Link}
+        \end{itemize}
+    \item \textbf{Kaggle Training Sessions:}
+        \begin{itemize}
+            \item LSTM Baseline: \href{https://www.kaggle.com/code/phongau/sentiment-analysis-for-game-review/output?scriptVersionId=287967429}{Session Log}
+            \item Embedding Gemma + XGBoost:
+                \begin{enumerate}
+                    \item \href{https://www.kaggle.com/code/phongau/wm-xgboost/output?scriptVersionId=288046131}{Part 1}
+                    \item \href{https://www.kaggle.com/code/thesyx03/wm-xgboost-continue/output?scriptVersionId=288146195}{Part 2 (Continued)}
+                \end{enumerate}
+            \item Finetuned RoBERTa:
+                \begin{enumerate}
+                    \item \href{https://www.kaggle.com/code/veilwings/roberta-sentiment-analysis/output?scriptVersionId=287976438}{Part 1}
+                    \item \href{https://www.kaggle.com/code/veilwings/roberta-sentiment-analysis-cont/output?scriptVersionId=288149370}{Part 2}
+                    \item \href{https://www.kaggle.com/code/veilwings/roberta-sentiment-analysis-cont-cont/output?scriptVersionId=288290606}{Part 3}
+                    \item \href{https://www.kaggle.com/code/justveil/roberta-sentiment-analysis-cont-cont-cont/output?scriptVersionId=288398950}{Part 4}
+                \end{enumerate}
         \end{itemize}
 \end{enumerate}
 

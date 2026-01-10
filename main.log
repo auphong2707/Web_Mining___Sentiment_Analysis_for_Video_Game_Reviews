@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.12.21)  10 JAN 2026 06:31
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.12.21)  10 JAN 2026 14:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1300,7 +1300,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.51 ...ng (Grid Search)}{24}{subsubsection.5.1.1}
+l.54 ...ng (Grid Search)}{25}{subsubsection.5.1.1}
                                                   % [1])
 \tf@toc=\write7
 \openout7 = `main.toc'.
@@ -1313,341 +1313,339 @@ LaTeX Font Info:    Trying to load font information for TS1+bch on input line 1
 File: ts1bch.fd 2004/10/18 font definitions for TS1/bch.
 ) [3{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/base/8r.enc}] [4] [5] [
 6] [7]
-LaTeX Font Info:    Trying to load font information for T5+pcr on input line 28
-7.
+LaTeX Font Info:    Trying to load font information for T5+pcr on input line 29
+6.
 
 (/usr/local/texlive/2025/texmf-dist/tex/latex/vntex/t5pcr.fd
 File: t5ucr.fd 2005/08/24 Fontinst v1.929 font definitions for T5/pcr.
 ) [8] [9] [10]
-Underfull \hbox (badness 1057) in paragraph at lines 362--363
+Underfull \hbox (badness 1057) in paragraph at lines 371--372
 []\T5/bch/b/n/10 Hyperparameter Space: \T5/bch/m/n/10 Each model ex-plores its 
 rel-e-vant hy-per-pa-ram-e-ter space^^Vlearning
  []
 
 
-Underfull \hbox (badness 3240) in paragraph at lines 362--363
+Underfull \hbox (badness 3240) in paragraph at lines 371--372
 \T5/bch/m/n/10 rates, reg-u-lar-iza-tion strengths, ar-chi-tec-tural choices^^V
 with re-sults au-to-mat-i-cally saved to
  []
 
-[11]
+[11] [12] [13] [14] [15]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[12] [13] [14] [15] [16] [17] [18] [19]
-Underfull \hbox (badness 1735) in paragraph at lines 712--714
+[16] [17] [18] [19] [20]
+Underfull \hbox (badness 1735) in paragraph at lines 721--723
 []\T5/bch/m/it/10 Short, en-thu-si-as-tic (23 words, 121 char-ac-ters): \T5/pcr
 /m/n/10 En-joyed this game, pretty much it
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 712--714
+Underfull \hbox (badness 10000) in paragraph at lines 721--723
 \T5/pcr/m/n/10 was the best game I ever played this year, how-ever I hate it be
 -ing an
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 719--720
+Underfull \hbox (badness 10000) in paragraph at lines 728--729
 []\T5/pcr/m/n/10 Mario Kart World marks the new be-gin-ning of the Mario Kart s
 e-ries, and
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 719--720
+Underfull \hbox (badness 10000) in paragraph at lines 728--729
 \T5/pcr/m/n/10 thanks to the power of Switch 2, it does so in style. A qual-ity
  open
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 719--720
+Underfull \hbox (badness 10000) in paragraph at lines 728--729
 \T5/pcr/m/n/10 world, graph-i-cally very valid and with fun game-play that neve
 r tires.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 719--720
+Underfull \hbox (badness 10000) in paragraph at lines 728--729
 \T5/pcr/m/n/10 The im-mense ros-ter, also thanks to the al-ter-na-tive skins, a
 nd the tracks
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 719--720
+Underfull \hbox (badness 10000) in paragraph at lines 728--729
 \T5/pcr/m/n/10 re-worked to guar-an-tee re-playa-bil-ity, make it a must have f
 or ev-ery Nin-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 725--726
+Underfull \hbox (badness 10000) in paragraph at lines 734--735
 []\T5/pcr/m/n/10 The base game is good and for my first cam-paign it was played
  with-out
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 725--726
+Underfull \hbox (badness 10000) in paragraph at lines 734--735
 \T5/pcr/m/n/10 any bugs. The plot is ok and for-get-table with the clich² of ou
 r ter-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 725--726
+Underfull \hbox (badness 10000) in paragraph at lines 734--735
 \T5/pcr/m/n/10 ri-ble pol-i-tics. I miss the mul-ti-player game choice. My im-p
 res-sion is
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 725--726
+Underfull \hbox (badness 10000) in paragraph at lines 734--735
 \T5/pcr/m/n/10 that ev-ery fac-tion is bal-anced in its own way. Why not a Hot-
 seat mode
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 725--726
+Underfull \hbox (badness 10000) in paragraph at lines 734--735
 \T5/pcr/m/n/10 or even on-line play? The 2D art is good, but the same can-not b
 e said
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 725--726
+Underfull \hbox (badness 10000) in paragraph at lines 734--735
 \T5/pcr/m/n/10 about the 3D graph-ics. I still re-mem-ber the great an-i-ma-tio
 ns in Brig-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 725--726
+Underfull \hbox (badness 10000) in paragraph at lines 734--735
 \T5/pcr/m/n/10 an-dine: Leg-end of Fors-ena Grand Edi-tion on the PlaySta-tion 
 1. I hope
  []
 
-[20]
-Underfull \hbox (badness 10000) in paragraph at lines 731--732
+
+Underfull \hbox (badness 10000) in paragraph at lines 740--741
 []\T5/pcr/m/n/10 Dead Space 2, on the sur-face, ap-pears to be more of the same
 . Af-ter the
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 731--732
+Underfull \hbox (badness 10000) in paragraph at lines 740--741
 \T5/pcr/m/n/10 hard slog through Dead Space one, it seems the se-quel would re-
 peat the
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 731--732
+Underfull \hbox (badness 10000) in paragraph at lines 740--741
 \T5/pcr/m/n/10 for-mula. But in-stead, Dead Space 2 fea-tures a num-ber of se-q
 uences that
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 731--732
+Underfull \hbox (badness 10000) in paragraph at lines 740--741
 \T5/pcr/m/n/10 em-pha-size in-ten-sity over rep-e-ti-tion. Over-all, the game i
 s more in-tense
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 731--732
+Underfull \hbox (badness 10000) in paragraph at lines 740--741
 \T5/pcr/m/n/10 and bet-ter paced than the orig-i-nal, with stronger sto-ry-tell
 ing and char-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 731--732
+Underfull \hbox (badness 10000) in paragraph at lines 740--741
 \T5/pcr/m/n/10 ac-ter de-vel-op-ment. While some de-sign choices re-main ques-t
 ion-able, the
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 737--738
+[21]
+Underfull \hbox (badness 10000) in paragraph at lines 746--747
 []\T5/pcr/m/n/10 As an orig-i-nal player of FFXIV 1.0, I went into ARR with low
  ex-pec-ta-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 737--738
+Underfull \hbox (badness 10000) in paragraph at lines 746--747
 \T5/pcr/m/n/10 tions. I was sur-prised by the sheer over-haul of the game. The 
 en-vi-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 737--738
+Underfull \hbox (badness 10000) in paragraph at lines 746--747
 \T5/pcr/m/n/10 ron-ments, sound, and game-play all im-proved sig-nif-i-cantly. 
 That said,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 737--738
+Underfull \hbox (badness 10000) in paragraph at lines 746--747
 \T5/pcr/m/n/10 launch is-sues such as server con-ges-tion neg-a-tively im-pacte
 d the ex-pe-ri-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 737--738
+Underfull \hbox (badness 10000) in paragraph at lines 746--747
 \T5/pcr/m/n/10 ence. Once these prob-lems were re-solved, the game proved to be
  ex-cel-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 752--753
+Underfull \hbox (badness 10000) in paragraph at lines 761--762
 []\T5/pcr/m/n/10 I have been play-ing this since launch and can hon-estly say i
 t is av-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 752--753
+Underfull \hbox (badness 10000) in paragraph at lines 761--762
 \T5/pcr/m/n/10 er-age. MKX was far more en-joy-able. The story mode is ex-cit-i
 ng, but
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 758--759
+Underfull \hbox (badness 10000) in paragraph at lines 767--768
 []\T5/pcr/m/n/10 The game is be-low av-er-age in nearly ev-ery as-pect. While c
 on-trols are
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 758--759
+Underfull \hbox (badness 10000) in paragraph at lines 767--768
 \T5/pcr/m/n/10 func-tional and vi-su-als are ac-cept-able in places, the plot i
 s dull and
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 758--759
+Underfull \hbox (badness 10000) in paragraph at lines 767--768
 \T5/pcr/m/n/10 over-stays its wel-come. For such a weak nar-ra-tive, the game l
 ength feels
  []
 
-[21]
-Underfull \hbox (badness 10000) in paragraph at lines 764--765
+
+Underfull \hbox (badness 10000) in paragraph at lines 773--774
 []\T5/pcr/m/n/10 This game aban-dons the sur-vival hor-ror roots of the fran-ch
 ise in fa-vor
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 764--765
+Underfull \hbox (badness 10000) in paragraph at lines 773--774
 \T5/pcr/m/n/10 of repet-i-tive ac-tion me-chan-ics. While some fa-mil-iar char-
 ac-ters re-turn,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 770--771
+Underfull \hbox (badness 10000) in paragraph at lines 779--780
 []\T5/pcr/m/n/10 FIFA 15 starts strong vi-su-ally but de-te-ri-o-rates quickly 
 due to tech-ni-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 770--771
+Underfull \hbox (badness 10000) in paragraph at lines 779--780
 \T5/pcr/m/n/10 cal glitches and game-play im-bal-ance. On-line is-sues, re-peat
 ed bugs, and
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 770--771
+Underfull \hbox (badness 10000) in paragraph at lines 779--780
 \T5/pcr/m/n/10 per-ceived bias sig-nif-i-cantly di-min-ish en-joy-ment, mak-ing
  this one of the
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 780--781
+[22]
+Underfull \hbox (badness 10000) in paragraph at lines 789--790
 []\T5/pcr/m/n/10 It was one of the pi-o-neers of RTS games and highly in-no-va-
 tive in 1997.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 780--781
+Underfull \hbox (badness 10000) in paragraph at lines 789--790
 \T5/pcr/m/n/10 How-ever, hav-ing played more mod-ern ti-tles first, I found it 
 bor-ing. De-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 786--787
+Underfull \hbox (badness 10000) in paragraph at lines 795--796
 []\T5/pcr/m/n/10 Liberation HD is solid over-all. The me-chan-ics work well, an
 d the pro-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 786--787
+Underfull \hbox (badness 10000) in paragraph at lines 795--796
 \T5/pcr/m/n/10 tag-o-nist is com-pelling. How-ever, the game lacks some fea-tur
 es ex-pected
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 792--793
+Underfull \hbox (badness 10000) in paragraph at lines 801--802
 []\T5/pcr/m/n/10 The game ex-cels in vi-su-als and move-ment, but the nar-ra-ti
 ve is bland and
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 792--793
+Underfull \hbox (badness 10000) in paragraph at lines 801--802
 \T5/pcr/m/n/10 repet-i-tive. While en-joy-able at first, the ex-pe-ri-ence grad
 -u-ally be-comes
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 798--799
+Underfull \hbox (badness 10000) in paragraph at lines 807--808
 []\T5/pcr/m/n/10 The game-play loop is ini-tially fun but quickly be-comes repe
 t-i-tive.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 798--799
+Underfull \hbox (badness 10000) in paragraph at lines 807--808
 \T5/pcr/m/n/10 While the end-ing is sat-is-fy-ing, much of the ex-pe-ri-ence fe
 els un-nec-es-
  []
 
-[22]
-Underfull \hbox (badness 10000) in paragraph at lines 804--805
+
+Underfull \hbox (badness 10000) in paragraph at lines 813--814
 []\T5/pcr/m/n/10 The core game-play me-chan-ics are solid, but the game lacks i
 n-no-va-tion.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 804--805
+Underfull \hbox (badness 10000) in paragraph at lines 813--814
 \T5/pcr/m/n/10 De-spite sev-eral strong el-e-ments, the over-all ex-pe-ri-ence 
 fails to stand
  []
 
-[23]
-<lstm_valf1_gridsearch.png, id=487, 5697.285pt x 1832.8475pt>
+[23] [24]
+<lstm_valf1_gridsearch.png, id=492, 5697.285pt x 1832.8475pt>
 File: lstm_valf1_gridsearch.png Graphic file (type png)
 <use lstm_valf1_gridsearch.png>
-Package pdftex.def Info: lstm_valf1_gridsearch.png  used on input line 898.
+Package pdftex.def Info: lstm_valf1_gridsearch.png  used on input line 907.
 (pdftex.def)             Requested size: 457.80486pt x 147.27403pt.
- [24]
-<lstm_learning_curve.png, id=494, 5697.285pt x 1832.8475pt>
+<lstm_learning_curve.png, id=493, 5697.285pt x 1832.8475pt>
 File: lstm_learning_curve.png Graphic file (type png)
 <use lstm_learning_curve.png>
-Package pdftex.def Info: lstm_learning_curve.png  used on input line 917.
+Package pdftex.def Info: lstm_learning_curve.png  used on input line 926.
 (pdftex.def)             Requested size: 457.80486pt x 147.27403pt.
-<lstm_valf1_final.png, id=495, 5697.285pt x 1832.8475pt>
+ [25 <./lstm_valf1_gridsearch.png>]
+<lstm_valf1_final.png, id=501, 5697.285pt x 1832.8475pt>
 File: lstm_valf1_final.png Graphic file (type png)
 <use lstm_valf1_final.png>
-Package pdftex.def Info: lstm_valf1_final.png  used on input line 924.
+Package pdftex.def Info: lstm_valf1_final.png  used on input line 933.
 (pdftex.def)             Requested size: 457.80486pt x 147.27403pt.
- [25 <./lstm_valf1_gridsearch.png> <./lstm_learning_curve.png>]
-<roberta_valf1_gridsearch.png, id=504, 5697.285pt x 1832.8475pt>
+<roberta_valf1_gridsearch.png, id=502, 5697.285pt x 1832.8475pt>
 File: roberta_valf1_gridsearch.png Graphic file (type png)
 <use roberta_valf1_gridsearch.png>
-Package pdftex.def Info: roberta_valf1_gridsearch.png  used on input line 942.
+Package pdftex.def Info: roberta_valf1_gridsearch.png  used on input line 951.
 (pdftex.def)             Requested size: 457.80486pt x 147.27403pt.
-
-[26 <./lstm_valf1_final.png> <./roberta_valf1_gridsearch.png>]
-<roberta_learning_curve.png, id=514, 5697.285pt x 1832.8475pt>
+ [26 <./lstm_learning_curve.png> <./lstm_valf1_final.png>]
+<roberta_learning_curve.png, id=511, 5697.285pt x 1832.8475pt>
 File: roberta_learning_curve.png Graphic file (type png)
 <use roberta_learning_curve.png>
-Package pdftex.def Info: roberta_learning_curve.png  used on input line 979.
+Package pdftex.def Info: roberta_learning_curve.png  used on input line 988.
 (pdftex.def)             Requested size: 457.80486pt x 147.27403pt.
-<roberta_valf1_final.png, id=515, 5697.285pt x 1832.8475pt>
+<roberta_valf1_final.png, id=512, 5697.285pt x 1832.8475pt>
 File: roberta_valf1_final.png Graphic file (type png)
 <use roberta_valf1_final.png>
-Package pdftex.def Info: roberta_valf1_final.png  used on input line 986.
+Package pdftex.def Info: roberta_valf1_final.png  used on input line 995.
 (pdftex.def)             Requested size: 457.80486pt x 147.27403pt.
- [27 <./roberta_learning_curve.png> <./roberta_valf1_final.png>] [28] [29] [30]
+ [27 <./roberta_valf1_gridsearch.png> <./roberta_learning_curve.png>] [28 <./ro
+berta_valf1_final.png>] [29] [30] [31]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[31] [32] [33] [34] [35] [36] [37] (./main.bbl
+[32] [33] [34] [35] [36] [37] [38] (./main.bbl
 LaTeX Font Info:    Trying to load font information for OT1+bch on input line 1
 2.
 
@@ -1659,13 +1657,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 32--35
 s : / / huggingface . co / FacebookAI /
  []
 
-
+[39]
 Underfull \hbox (badness 10000) in paragraph at lines 37--40
 []\T5/bch/m/n/10 Google.  google/embeddinggemma-300m.  []$\T5/pcr/m/n/10 https 
 : / / huggingface . co / google /
  []
 
-[38]
+
 Overfull \hbox (14.015pt too wide) in paragraph at lines 64--68
 \T5/pcr/m/n/10 resources / blog / global-[]games-[]market-[]revenue-[]estimates
 -[]and-[]forecasts-[]in-[]2024$[]\T5/bch/m/n/10 . 
@@ -1683,8 +1681,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 78--82
  wp-[]content / uploads / 2019 / 02 /
  []
 
-) [39]
-runsystem(latexminted cleantemp  --timestamp 20260110063132Z FAD58DE7366495DB46
+) [40]
+runsystem(latexminted cleantemp  --timestamp 20260110142512Z FAD58DE7366495DB46
 50CFEFAC2FCD61)...executed safely (allowed).
 
  (./main.aux)
@@ -1696,9 +1694,9 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 4212BB8C8827171782FCE89B81C98A30;11984.
  ) 
 Here is how much of TeX's memory you used:
- 40629 strings out of 467538
- 939609 string characters out of 5419551
- 1585757 words of memory out of 5000000
+ 40637 strings out of 467538
+ 939665 string characters out of 5419551
+ 1585758 words of memory out of 5000000
  68703 multiletter control sequences out of 15000+600000
  671916 words of font info for 87 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1722,10 +1720,10 @@ t/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist
 onts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2025/texmf-dist/fon
 ts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2025/texmf-dist
 /fonts/type1/vntex/urwvn/ucrr8v.pfb>
-Output written on main.pdf (40 pages, 2782423 bytes).
+Output written on main.pdf (41 pages, 2785202 bytes).
 PDF statistics:
- 742 PDF objects out of 1000 (max. 8388607)
- 638 compressed objects within 7 object streams
- 191 named destinations out of 1000 (max. 500000)
+ 762 PDF objects out of 1000 (max. 8388607)
+ 657 compressed objects within 7 object streams
+ 199 named destinations out of 1000 (max. 500000)
  490 words of extra memory for PDF output out of 10000 (max. 10000000)
 
