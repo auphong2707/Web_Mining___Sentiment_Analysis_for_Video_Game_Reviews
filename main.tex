@@ -1273,7 +1273,9 @@ The fine-tuned RoBERTa model achieves the most balanced performance, with a pred
 
 
 \section{Discussion}
+In this section, we analyze the specific error patterns of the baseline LSTM model in comparison to the two stronger proposed approaches: fine-tuned RoBERTa and EmbeddingGemma + XGBoost. By examining the subsets of test examples where LSTM fails but the other models succeed, we aim to identify the key weaknesses of the LSTM architecture in handling sentiment classification, particularly for nuanced cases.
 
+Furthermore, we do the same analysis for the two proposed approaches against each other to uncover any complementary strengths or weaknesses. This comparative error analysis provides insights into how different modeling choices impact performance and where future improvements can be targeted.
 
 
 \subsection{LSTM vs RoBERTa and EmbeddingGemma + XGBoost}
