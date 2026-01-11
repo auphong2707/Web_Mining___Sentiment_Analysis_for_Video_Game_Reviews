@@ -427,6 +427,9 @@ Loss Function & NLLLoss (3-class) \\
 \end{tabular}
 \end{table}
 
+\paragraph{Model Selection}
+For each run, choose the best F1-Macro model during validation step for the final evaluation at the end of training.
+
 \textbf{Stage 1: Grid Search for Learning Rate Optimization.}
 To identify the optimal learning rate while maintaining computational efficiency, we conduct a grid search on a 10\% subset of the training data:
 \begin{itemize}
@@ -436,12 +439,7 @@ To identify the optimal learning rate while maintaining computational efficiency
 \end{itemize}
 
 \textbf{Stage 2: Final Training with Optimal Configuration.}
-Using the best learning rate $\eta^*$ identified in Stage 1, we train on the complete dataset (100\% of training data):
-\begin{itemize}
-    \item \textbf{Validation Frequency:} Every 500 training steps (standard interval for full-scale training).
-    \item \textbf{Checkpoint Management:} When validation F1 improves, a checkpoint is saved containing model state, optimizer state, and performance metrics. Only the top 2 checkpoints are retained to conserve storage.
-    \item \textbf{Model Selection:} After training completes, the checkpoint with the highest validation F1 score is automatically loaded for final test set evaluation, serving as an implicit early stopping mechanism.
-\end{itemize}
+Using the best learning rate $\eta^*$ identified in Stage 1, we train on the complete dataset (100\% of training data) with validation for every 500 steps.
 
 
 \subsubsection{Proposed Approach 1: Fine-Tuned RoBERTa}
@@ -495,6 +493,9 @@ Mixed Precision (FP16) & Enabled \\
 \end{tabular}
 \end{table}
 
+\paragraph{Model Selection}
+For each run, choose the best F1-Macro model during validation step for the final evaluation at the end of training.
+
 \textbf{Stage 1: Grid Search for Learning Rate Optimization.}
 To identify the optimal learning rate for the fine-tuning process, we conduct a grid search on a 10\% subset of the training data:
 \begin{itemize}
@@ -504,13 +505,7 @@ To identify the optimal learning rate for the fine-tuning process, we conduct a 
 \end{itemize}
 
 \textbf{Stage 2: Final Training with Optimal Configuration.}
-Using the best learning rate $\eta^*$ identified in Stage 1, we fine-tune on the complete dataset (100\% of training data):
-\begin{itemize}
-    \item \textbf{Validation Frequency:} Every 1000 training steps (standard interval for full-scale training).
-    \item \textbf{Checkpoint Management:} When validation F1 improves, a checkpoint is saved containing model state, optimizer state, and performance metrics. Only the top 2 checkpoints are retained to conserve storage.
-    \item \textbf{Model Selection:} After training completes, the checkpoint with the highest validation F1 score is automatically loaded for final test set evaluation, serving as an implicit early stopping mechanism.
-\end{itemize}
-
+Using the best learning rate $\eta^*$ identified in Stage 1, we fine-tune on the complete dataset (100\% of training data) with validation for every 1000 training steps (standard interval for full-scale training).
 
 \subsubsection{Proposed Approach 2: EmbeddingGemma-300m with XGBoost}
 
@@ -563,6 +558,9 @@ Class Weighting & Balanced \\
 \end{tabular}
 \end{table}
 
+\paragraph{Model Selection}
+For each run, the model at the iteration with the lowest validation loss is selected as the final model. Early stopping on the validation set is used to mitigate the overfit problem inherent to Gradient Boosting algorithms.
+
 \textbf{Stage 1: Grid Search for Hyperparameter Optimization.}
 To identify the optimal XGBoost hyperparameters, we conduct a grid search on a 10\% subset of the training data (using pre-computed embeddings):
 \begin{itemize}
@@ -575,16 +573,12 @@ To identify the optimal XGBoost hyperparameters, we conduct a grid search on a 1
         \item Column subsample ratio: $\{0.8, 1.0\}$
         \item L2 regularization ($\lambda$): $\{1, 10\}$
     \end{itemize}
-    \item \textbf{Fixed Parameters:} Number of estimators fixed at 5000 with early stopping to find optimal iteration count.
+    \item \textbf{Fixed Parameters:} Number of estimators fixed at 5000 with early stopping (200 rounds) to find optimal iteration count.
     \item \textbf{Selection Metric:} Macro-averaged F1 score on the validation set, ensuring balanced performance across all sentiment classes.
 \end{itemize}
 
 \textbf{Stage 2: Final Training with Optimal Configuration.}
-Using the best hyperparameters identified in Stage 1, we train on embeddings from the complete dataset (100\% of training data):
-\begin{itemize}
-    \item \textbf{Training Protocol:} XGBoost's built-in early stopping monitors validation performance every boosting round, terminating training when validation loss fails to improve for 200 consecutive rounds.
-    \item \textbf{Model Selection:} The model at the iteration with lowest validation loss is automatically retained for final evaluation.
-\end{itemize}
+Using the best hyperparameters identified in Stage 1, we train on embeddings from the complete dataset (100\% of training data)
 
 \subsubsection{Evaluation Metrics}
 

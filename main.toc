@@ -32,19 +32,22 @@
 \contentsline {paragraph}{Data Preprocessing and Tokenization}{12}{subsubsection.3.3.1}%
 \contentsline {paragraph}{Network Architecture}{12}{subsubsection.3.3.1}%
 \contentsline {paragraph}{Training Configuration}{13}{Item.18}%
-\contentsline {subsubsection}{\numberline {3.3.2}Proposed Approach 1: Fine-Tuned RoBERTa}{14}{subsubsection.3.3.2}%
+\contentsline {paragraph}{Model Selection}{13}{table.caption.1}%
+\contentsline {subsubsection}{\numberline {3.3.2}Proposed Approach 1: Fine-Tuned RoBERTa}{13}{subsubsection.3.3.2}%
 \contentsline {paragraph}{Network Architecture}{14}{subsubsection.3.3.2}%
 \contentsline {paragraph}{Data Preprocessing and Tokenization}{14}{subsubsection.3.3.2}%
 \contentsline {paragraph}{Training Configuration}{14}{subsubsection.3.3.2}%
+\contentsline {paragraph}{Model Selection}{14}{table.caption.2}%
 \contentsline {subsubsection}{\numberline {3.3.3}Proposed Approach 2: EmbeddingGemma-300m with XGBoost}{15}{subsubsection.3.3.3}%
 \contentsline {paragraph}{Embedding Generation with EmbeddingGemma-300m}{15}{subsubsection.3.3.3}%
 \contentsline {paragraph}{XGBoost Classification}{16}{subsubsection.3.3.3}%
 \contentsline {paragraph}{Training Configuration}{16}{subsubsection.3.3.3}%
+\contentsline {paragraph}{Model Selection}{16}{table.caption.3}%
 \contentsline {subsubsection}{\numberline {3.3.4}Evaluation Metrics}{17}{subsubsection.3.3.4}%
 \contentsline {paragraph}{Per-Class Metrics}{17}{subsubsection.3.3.4}%
 \contentsline {paragraph}{Overall Metrics}{18}{equation.9}%
-\contentsline {section}{\numberline {4}Dataset Characteristics}{19}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Class Distribution and Imbalance Analysis}{19}{subsection.4.1}%
+\contentsline {section}{\numberline {4}Dataset Characteristics}{18}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Class Distribution and Imbalance Analysis}{18}{subsection.4.1}%
 \contentsline {subsection}{\numberline {4.2}Textual Characteristics and Statistical Properties}{19}{subsection.4.2}%
 \contentsline {subsection}{\numberline {4.3}Representative Sample Analysis}{20}{subsection.4.3}%
 \contentsline {subsection}{\numberline {4.4}Linguistic Patterns and Vocabulary Analysis}{23}{subsection.4.4}%
@@ -52,7 +55,7 @@
 \contentsline {section}{\numberline {5}Training Process Report}{24}{section.5}%
 \contentsline {subsection}{\numberline {5.1}Baseline Model: Bidirectional LSTM}{24}{subsection.5.1}%
 \contentsline {subsubsection}{\numberline {5.1.1}Phase I: Hyperparameter Tuning (Grid Search)}{24}{subsubsection.5.1.1}%
-\contentsline {paragraph}{Selection Process}{25}{subsubsection.5.1.1}%
+\contentsline {paragraph}{Selection Process}{24}{subsubsection.5.1.1}%
 \contentsline {subsubsection}{\numberline {5.1.2}Phase II: Training Execution \& Validation Performance}{25}{subsubsection.5.1.2}%
 \contentsline {paragraph}{Training Configuration}{25}{subsubsection.5.1.2}%
 \contentsline {paragraph}{Validation Metrics}{26}{figure.caption.8}%
@@ -61,28 +64,28 @@
 \contentsline {paragraph}{Selection Process}{26}{subsubsection.5.2.1}%
 \contentsline {subsubsection}{\numberline {5.2.2}Phase II: Training Execution \& Validation Performance}{27}{subsubsection.5.2.2}%
 \contentsline {paragraph}{Training Configuration}{27}{subsubsection.5.2.2}%
-\contentsline {paragraph}{Validation Metrics}{28}{figure.caption.12}%
+\contentsline {paragraph}{Validation Metrics}{27}{figure.caption.12}%
 \contentsline {subsection}{\numberline {5.3}Proposed Approach 2: EmbeddingGemma-300m with XGBoost}{28}{subsection.5.3}%
 \contentsline {subsubsection}{\numberline {5.3.1}Phase I: Feature Extraction (Embedding Generation)}{28}{subsubsection.5.3.1}%
 \contentsline {subsubsection}{\numberline {5.3.2}Phase II: Hyperparameter Tuning (Grid Search)}{28}{subsubsection.5.3.2}%
 \contentsline {paragraph}{Selection Process}{28}{subsubsection.5.3.2}%
-\contentsline {subsubsection}{\numberline {5.3.3}Phase III: Classifier Training \& Validation Performance}{29}{subsubsection.5.3.3}%
-\contentsline {paragraph}{Training Configuration}{29}{subsubsection.5.3.3}%
+\contentsline {subsubsection}{\numberline {5.3.3}Phase III: Classifier Training \& Validation Performance}{28}{subsubsection.5.3.3}%
+\contentsline {paragraph}{Training Configuration}{28}{subsubsection.5.3.3}%
 \contentsline {paragraph}{Validation Metrics}{29}{subsubsection.5.3.3}%
 \contentsline {section}{\numberline {6}Results}{29}{section.6}%
-\contentsline {subsection}{\numberline {6.1}Overall metrics}{30}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.1}Overall metrics}{29}{subsection.6.1}%
 \contentsline {subsection}{\numberline {6.2}Per-class analysis (Metrics + Confusion matrices)}{30}{subsection.6.2}%
 \contentsline {section}{\numberline {7}Discussion}{32}{section.7}%
 \contentsline {subsection}{\numberline {7.1}LSTM vs RoBERTa and EmbeddingGemma + XGBoost}{32}{subsection.7.1}%
-\contentsline {paragraph}{Main issue}{34}{table.caption.20}%
-\contentsline {paragraph}{How this problem manifests}{34}{Item.46}%
-\contentsline {paragraph}{Practical implications}{35}{Item.46}%
-\contentsline {subsection}{\numberline {7.2}EmbeddingGemma + XGBoost vs RoBERTa}{35}{subsection.7.2}%
-\contentsline {paragraph}{Main issue}{36}{table.caption.21}%
-\contentsline {paragraph}{How this problem manifests}{36}{table.caption.21}%
-\contentsline {paragraph}{Root cause analysis}{37}{table.caption.21}%
-\contentsline {paragraph}{Practical implications}{37}{table.caption.21}%
+\contentsline {paragraph}{Main issue}{33}{table.caption.20}%
+\contentsline {paragraph}{How this problem manifests}{33}{Item.46}%
+\contentsline {paragraph}{Practical implications}{34}{Item.46}%
+\contentsline {subsection}{\numberline {7.2}EmbeddingGemma + XGBoost vs RoBERTa}{34}{subsection.7.2}%
+\contentsline {paragraph}{Main issue}{35}{table.caption.21}%
+\contentsline {paragraph}{How this problem manifests}{35}{table.caption.21}%
+\contentsline {paragraph}{Root cause analysis}{36}{table.caption.21}%
+\contentsline {paragraph}{Practical implications}{36}{table.caption.21}%
 \contentsline {section}{\numberline {8}Conclusion}{37}{section.8}%
-\contentsline {section}{\numberline {9}Group Contributions \& Resources}{38}{section.9}%
-\contentsline {subsection}{\numberline {9.1}Group Contributions}{38}{subsection.9.1}%
-\contentsline {subsection}{\numberline {9.2}Resources}{39}{subsection.9.2}%
+\contentsline {section}{\numberline {9}Group Contributions \& Resources}{37}{section.9}%
+\contentsline {subsection}{\numberline {9.1}Group Contributions}{37}{subsection.9.1}%
+\contentsline {subsection}{\numberline {9.2}Resources}{37}{subsection.9.2}%
