@@ -78,14 +78,14 @@
 \contentsline {section}{\numberline {7}Discussion}{32}{section.7}%
 \contentsline {subsection}{\numberline {7.1}LSTM vs RoBERTa and EmbeddingGemma + XGBoost}{32}{subsection.7.1}%
 \contentsline {paragraph}{Main issue}{33}{table.caption.20}%
-\contentsline {paragraph}{How this problem manifests}{33}{Item.46}%
+\contentsline {paragraph}{How this problem manifests}{34}{Item.46}%
 \contentsline {paragraph}{Practical implications}{34}{Item.46}%
-\contentsline {subsection}{\numberline {7.2}EmbeddingGemma + XGBoost vs RoBERTa}{34}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.2}EmbeddingGemma + XGBoost vs RoBERTa}{35}{subsection.7.2}%
 \contentsline {paragraph}{Main issue}{35}{table.caption.21}%
 \contentsline {paragraph}{How this problem manifests}{35}{table.caption.21}%
 \contentsline {paragraph}{Root cause analysis}{36}{table.caption.21}%
 \contentsline {paragraph}{Practical implications}{36}{table.caption.21}%
 \contentsline {section}{\numberline {8}Conclusion}{37}{section.8}%
-\contentsline {section}{\numberline {9}Group Contributions \& Resources}{37}{section.9}%
-\contentsline {subsection}{\numberline {9.1}Group Contributions}{37}{subsection.9.1}%
-\contentsline {subsection}{\numberline {9.2}Resources}{37}{subsection.9.2}%
+\contentsline {section}{\numberline {9}Group Contributions \& Resources}{38}{section.9}%
+\contentsline {subsection}{\numberline {9.1}Group Contributions}{38}{subsection.9.1}%
+\contentsline {subsection}{\numberline {9.2}Resources}{38}{subsection.9.2}%
