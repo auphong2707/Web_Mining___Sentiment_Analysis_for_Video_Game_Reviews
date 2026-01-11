@@ -27,7 +27,7 @@
 \contentsline {subsubsection}{\numberline {3.2.3}Dataset Splitting}{11}{subsubsection.3.2.3}%
 \contentsline {subsection}{\numberline {3.3}Phase 3: Model Training}{11}{subsection.3.3}%
 \contentsline {paragraph}{Phase 1: Grid Search (Hyperparameter Exploration)}{11}{subsection.3.3}%
-\contentsline {paragraph}{Phase 2: Final Training (Production-Ready Model)}{12}{subsection.3.3}%
+\contentsline {paragraph}{Phase 2: Final Training (Production-Ready Model)}{11}{subsection.3.3}%
 \contentsline {subsubsection}{\numberline {3.3.1}Baseline Model: Bidirectional LSTM}{12}{subsubsection.3.3.1}%
 \contentsline {paragraph}{Data Preprocessing and Tokenization}{12}{subsubsection.3.3.1}%
 \contentsline {paragraph}{Network Architecture}{12}{subsubsection.3.3.1}%
@@ -35,7 +35,7 @@
 \contentsline {subsubsection}{\numberline {3.3.2}Proposed Approach 1: Fine-Tuned RoBERTa}{14}{subsubsection.3.3.2}%
 \contentsline {paragraph}{Network Architecture}{14}{subsubsection.3.3.2}%
 \contentsline {paragraph}{Data Preprocessing and Tokenization}{14}{subsubsection.3.3.2}%
-\contentsline {paragraph}{Training Configuration}{15}{subsubsection.3.3.2}%
+\contentsline {paragraph}{Training Configuration}{14}{subsubsection.3.3.2}%
 \contentsline {subsubsection}{\numberline {3.3.3}Proposed Approach 2: EmbeddingGemma-300m with XGBoost}{15}{subsubsection.3.3.3}%
 \contentsline {paragraph}{Embedding Generation with EmbeddingGemma-300m}{15}{subsubsection.3.3.3}%
 \contentsline {paragraph}{XGBoost Classification}{16}{subsubsection.3.3.3}%
@@ -50,8 +50,8 @@
 \contentsline {subsection}{\numberline {4.4}Linguistic Patterns and Vocabulary Analysis}{23}{subsection.4.4}%
 \contentsline {subsection}{\numberline {4.5}Domain-Specific Characteristics}{24}{subsection.4.5}%
 \contentsline {section}{\numberline {5}Training Process Report}{24}{section.5}%
-\contentsline {subsection}{\numberline {5.1}Baseline Model: Bidirectional LSTM}{25}{subsection.5.1}%
-\contentsline {subsubsection}{\numberline {5.1.1}Phase I: Hyperparameter Tuning (Grid Search)}{25}{subsubsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1}Baseline Model: Bidirectional LSTM}{24}{subsection.5.1}%
+\contentsline {subsubsection}{\numberline {5.1.1}Phase I: Hyperparameter Tuning (Grid Search)}{24}{subsubsection.5.1.1}%
 \contentsline {paragraph}{Selection Process}{25}{subsubsection.5.1.1}%
 \contentsline {subsubsection}{\numberline {5.1.2}Phase II: Training Execution \& Validation Performance}{25}{subsubsection.5.1.2}%
 \contentsline {paragraph}{Training Configuration}{25}{subsubsection.5.1.2}%

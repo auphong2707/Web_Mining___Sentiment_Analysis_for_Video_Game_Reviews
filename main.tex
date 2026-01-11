@@ -293,47 +293,43 @@ XGBoost constructs a strong classifier by sequentially adding ``weak'' learners 
 The foundation of this project is the construction of a novel, domain-specific dataset derived from Metacritic, a leading review aggregator for the gaming industry. The data acquisition process was designed to be robust, scalable, and capable of handling dynamic web content.
 
 \subsubsection{Game Discovery Module}
-The first step involved identifying a diverse list of games to ensure the dataset covers various genres, platforms, and time periods. We implemented a custom Python script, \texttt{discover\_games.py}, which employs standard HTTP requests and BeautifulSoup for HTML parsing. This script iterates through Metacritic's game listings, utilizing pagination handling to traverse multiple pages of search results, extracting key metadata for each game:
-\begin{itemize}
-    \item \textbf{Game Title:} The canonical name of the video game.
-    \item \textbf{Platform:} The specific console or system (e.g., PlayStation 5, PC, Xbox Series X) to account for performance differences that might affect sentiment.
-    \item \textbf{Metascore:} The aggregate critic score, collected for dataset completeness.
-    \item \textbf{Release Date:} The game's original release date for temporal analysis.
-    \item \textbf{URL:} The direct link to the game's user review page.
-\end{itemize}
-The output of this module is a structured list of game URLs stored in \texttt{data/discovered\_games/}, serving as the input queue for the review scraper.
+The first step involved identifying a diverse list of games to ensure the dataset covers various genres, platforms, and time periods. We implemented a custom Python script which employs standard web scraping techniques. This script iterates through Metacritic's game listings, utilizing pagination handling to traverse multiple pages of search results.
+
+For efficiency and simplicity, the discovery module extracts the URL-safe identifier for each game encountered. This serves as a unique key used to construct the direct link to each game's review page.
+
+The output is stored as plain text files, with one identifier per line (e.g., ``the-legend-of-zelda-ocarina-of-time''). To manage large-scale discovery operations, the script supports splitting output across multiple files, enabling parallel processing in subsequent scraping phases. The discovered game identifiers serve as the input queue for the review scraper module.
 
 \subsubsection{Review Scraping Engine}
-To extract the actual review content, we developed a sophisticated scraping engine using \textbf{Scrapy}, a high-level web crawling framework, integrated with \textbf{Playwright}. This combination was essential because Metacritic relies heavily on JavaScript to render user reviews dynamically. Standard HTTP requests (used by libraries like \texttt{requests} or \texttt{BeautifulSoup}) would fail to load the full content.
+To extract the actual review content, we developed a sophisticated scraping engine using \textbf{Scrapy}, a high-level web crawling framework, integrated with \textbf{Playwright}. This combination was essential because Metacritic relies heavily on JavaScript to render user reviews dynamically. Standard HTTP requests would fail to load the full content.
 
-The spider, located in \texttt{metacritic\_scraper/spiders/}, operates as follows:
+The spider operates as follows:
 \begin{enumerate}
-    \item \textbf{Request Handling:} It accepts the list of discovered game URLs and initiates asynchronous requests with configurable concurrency (\texttt{CONCURRENT\_REQUESTS = 2-4}).
+    \item \textbf{Request Handling:} It accepts the list of discovered game slugs and processes them sequentially with configurable delays between games.
     \item \textbf{Dynamic Rendering:} Playwright launches a headless browser instance to render the DOM (Document Object Model) fully, triggering the necessary JavaScript events to load all reviews.
-    \item \textbf{Platform Discovery:} The spider automatically detects all available platforms for multi-platform games by parsing the platform filter dropdown, then scrapes reviews for each platform separately to ensure comprehensive coverage.
-    \item \textbf{Progressive Loading:} To load all available reviews, Playwright automatically scrolls through the page and clicks "Load More" buttons, with timeout protection (300 seconds per platform) and duplicate detection to prevent infinite loops.
+    \item \textbf{Progressive Loading:} To load all available reviews, the engine automatically scrolls through the page and clicks ``Load More'' buttons, with timeout protection and duplicate detection to prevent infinite loops.
     \item \textbf{Data Extraction:} The spider parses the rendered HTML to extract comprehensive review and game metadata:
-    \begin{itemize}
-        \item \textbf{Review Text:} The body of the user's comment.
-        \item \textbf{User Score:} The numerical rating (0-10 scale, normalized to 0-100 for consistency).
-        \item \textbf{Review Category:} Extracted directly from Metacritic's color-coded sentiment badges: positive (green, $\geq$75), mixed (yellow, 50-74), or negative (red, $<$50), which represent Metacritic's domain-expert classification of review sentiment.
-        \item \textbf{Review Platform:} The specific platform for which the review was written, extracted at the individual review level.
-        \item \textbf{Date:} The submission date of the review.
-        \item \textbf{Username:} Identifier for the reviewer.
-        \item \textbf{Game Metadata:} Title, platform, metascore, release date, genre, developer, and publisher for contextual analysis.
+\begin{itemize}
+    \item \textbf{Review Text:} The body of the user's comment.
+    \item \textbf{User Score:} The numerical rating (0-10 scale, normalized to 0-100 for consistency).
+    \item \textbf{Review Category:} Extracted directly from Metacritic's color-coded sentiment badges: positive (green, $\geq$75), mixed (yellow, 50-74), or negative (red, $<$50), which represent Metacritic's domain-expert classification of review sentiment.
+    \item \textbf{Review Platform:} The specific platform for which the review was written, extracted at the individual review level from the rendered page.
+    \item \textbf{Date:} The submission date of the review.
+    \item \textbf{Username:} Identifier for the reviewer.
+    \item \textbf{Game Metadata:} Title, platform, metascore, release date, genre, developer, and publisher for contextual analysis.
     \end{itemize}
-    \item \textbf{Rate Limiting:} To adhere to ethical scraping guidelines and avoid IP bans, we configured \texttt{DOWNLOAD\_DELAY = 3} seconds, enabled auto-throttling (\texttt{AUTOTHROTTLE\_ENABLED = True}), and limited concurrent requests in both the spider's custom settings and \texttt{settings.py}, ensuring a respectful request pace that adapts to server response times.
-\end{enumerate}
-The raw output is saved as JSON Lines (\texttt{.jsonl}) files in the \texttt{data/review\_data/} directory, with each review stored as a separate JSON object on its own line, facilitating efficient line-by-line processing in subsequent stages.
+    \item \textbf{Incremental Storage and Recovery:} Reviews are incrementally appended after each game completes, with progress tracking to enable automatic resumption if interrupted.
+    \item \textbf{Rate Limiting:} To adhere to ethical scraping guidelines and avoid server overload, we configured inter-game delays, enabled auto-throttling, and limited concurrent requests, ensuring a respectful request pace that adapts to server response times.
+    \end{enumerate}
+The raw output is saved as JSON Lines files, with each review stored as a separate JSON object on its own line, facilitating efficient line-by-line processing in subsequent stages.
 
 \subsection{Phase 2: Data Preparation}
 Raw web data is inherently noisy and unstructured. Phase 2 focused on transforming the raw collection into a clean, machine-learning-ready benchmark dataset.
 
 \subsubsection{Aggregation and Cleaning}
-We developed an aggregation pipeline (\texttt{aggregate\_dataset.py}) to consolidate the scattered JSONL files from Phase 1. Key preprocessing steps included:
+We developed an aggregation pipeline to consolidate the scattered data files from Phase 1. Key preprocessing steps included:
 \begin{itemize}
     \item \textbf{Language Filtering:} Since the scope of this project is English sentiment analysis, we applied the \texttt{langdetect} library to identify and retain only English reviews. While individual reviews may contain occasional non-English words (e.g., game titles or character names), the library's n-gram-based detection ensures the overall text is predominantly English, maintaining vocabulary consistency for the embedding layers and preventing multilingual interference.
-    \item \textbf{Deduplication:} Duplicate reviews (e.g., spam or multiple scrapes of the same page) were identified via normalized text comparison and removed to prevent data leakage between training and test sets. The system tracks unique reviews using lowercase, trimmed text as a hash key.
+    \item \textbf{Deduplication:} Duplicate reviews (e.g., spam or multiple scrapes of the same page) were identified via normalized text comparison and removed to prevent data leakage between training and test sets.
     \item \textbf{Field Selection:} From the rich metadata collected during scraping, we extracted only the essential fields for sentiment analysis: review text and review category. User scores, while collected as part of comprehensive dataset construction, were not utilized in the classification task but remain available for potential future correlation studies or multi-task learning experiments.
 \end{itemize}
 Note that text normalization (whitespace standardization) was performed during the scraping phase itself, ensuring clean input to the aggregation pipeline.
@@ -348,14 +344,13 @@ Sentiment labels were directly extracted from Metacritic's platform during Phase
 These pre-labeled categories were scraped directly from the HTML structure, eliminating the need for manual annotation or score-based heuristics. This approach ensures that our labels align precisely with Metacritic's domain expertise in game review sentiment classification. All three categories were retained in the final dataset to enable both binary (positive vs. negative) and ternary (including mixed) classification experiments.
 
 \subsubsection{Dataset Splitting}
-To guarantee rigorous evaluation, the processed dataset was deterministically split using a fixed random seed (\texttt{random.seed(42)}) into three subsets:
+To guarantee rigorous evaluation, the processed dataset was deterministically split using a fixed random seed into three subsets:
 \begin{itemize}
     \item \textbf{Training Set (80\%):} Used for model parameter updates during backpropagation.
     \item \textbf{Validation Set (10\%):} Used for hyperparameter tuning, early stopping, and model selection during training.
     \item \textbf{Test Set (10\%):} Held out completely until the final evaluation phase to report unbiased performance metrics.
 \end{itemize}
-The splitting was performed after shuffling to ensure random distribution across all sentiment categories and prevent temporal or game-specific biases. The final dataset was formatted as a HuggingFace \texttt{DatasetDict} and uploaded to the HuggingFace Hub using \texttt{prepare\_and\_upload\_hf\_dataset.py}, enabling seamless integration with modern NLP libraries such as Transformers and Datasets.
-
+The splitting was performed after shuffling to ensure random distribution across all sentiment categories and prevent temporal or game-specific biases. The final dataset was formatted for the HuggingFace Hub, enabling seamless integration with modern NLP libraries such as Transformers and Datasets.
 
 \subsection{Phase 3: Model Training}
 The final phase involves the development and evaluation of three distinct sentiment classification models. The training pipeline implements a rigorous two-phase strategy to ensure optimal hyperparameter selection and unbiased performance evaluation.
