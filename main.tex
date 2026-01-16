@@ -427,6 +427,12 @@ Loss Function & NLLLoss (3-class) \\
 \end{tabular}
 \end{table}
 
+\paragraph{Loss Function} The optimization objective for the baseline Bi-LSTM model is the Negative Log-Likelihood Loss (NLLLoss). It is important to note that NLLLoss and Cross-Entropy Loss are mathematically equivalent in terms of the final optimization goal; the distinction lies primarily in the implementation within deep learning frameworks. While Cross-Entropy typically performs the \textit{LogSoftmax} operation internally, NLLLoss expects the network's final layer to have already applied \textit{LogSoftmax}. For a single sample $i$, the loss is defined as:
+\begin{equation}
+\mathcal{L}_i = - \log(p_{i, y_i})
+\end{equation}
+where $y_i \in \{0, 1, 2\}$ represents the ground truth sentiment class and $p_{i, y_i}$ is the probability assigned to that class by the model.
+
 \paragraph{Model Selection}
 For each run, choose the best F1-Macro model during validation step for the final evaluation at the end of training.
 
@@ -493,6 +499,12 @@ Mixed Precision (FP16) & Enabled \\
 \end{tabular}
 \end{table}
 
+\paragraph{Loss Function} For fine-tuning the RoBERTa transformer, we employ the standard Cross-Entropy Loss. This function measures the performance of a classification model whose output is a probability value between 0 and 1. The total loss $\mathcal{L}$ for $N$ samples and $C=3$ classes is expressed as:
+\begin{equation}
+\mathcal{L} = -\frac{1}{N} \sum_{i=1}^{N} \sum_{c=1}^{C} y_{ic} \log(\hat{y}_{ic})
+\end{equation}
+where $y_{ic}$ is a binary indicator if class label $c$ is the correct classification for observation $i$, and $\hat{y}_{ic}$ is the predicted probability.
+
 \paragraph{Model Selection}
 For each run, choose the best F1-Macro model during validation step for the final evaluation at the end of training.
 
@@ -558,6 +570,11 @@ Class Weighting & Balanced \\
 \end{tabular}
 \end{table}
 
+\paragraph{Loss Function: Cross-Entropy Loss} As detailed in the training configuration, the XGBoost classifier utilizes Cross-Entropy as its loss function (while using Log Loss as the evaluation metric). In the gradient boosting framework, the objective function at step $t$ includes this differentiable convex loss term and a regularization term $\Omega$:
+\begin{equation}
+\mathcal{L}^{(t)} = \sum_{i=1}^{n} l(y_i, \hat{y}_i^{(t-1)} + f_t(x_i)) + \Omega(f_t)
+\end{equation}
+where $l$ denotes the Cross-Entropy loss function that measures the difference between the prediction $\hat{y}_i$ and the target $y_i$, and $f_t$ represents the new tree being added to the ensemble.
 \paragraph{Model Selection}
 For each run, the model at the iteration with the lowest validation loss is selected as the final model. Early stopping on the validation set is used to mitigate the overfit problem inherent to Gradient Boosting algorithms.
 

@@ -55,109 +55,112 @@
 \@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Common Hyperparameters for LSTM Training}}{13}{table.caption.1}\protected@file@percent }
 \providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
 \newlabel{tab:lstm_params}{{1}{13}{Common Hyperparameters for LSTM Training}{table.caption.1}{}}
-\@writefile{toc}{\contentsline {paragraph}{Model Selection}{13}{table.caption.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.2}Proposed Approach 1: Fine-Tuned RoBERTa}{13}{subsubsection.3.3.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Loss Function}{13}{table.caption.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Model Selection}{13}{equation.7}\protected@file@percent }
 \citation{facebookai_roberta_base}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.2}Proposed Approach 1: Fine-Tuned RoBERTa}{14}{subsubsection.3.3.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Network Architecture}{14}{subsubsection.3.3.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Data Preprocessing and Tokenization}{14}{subsubsection.3.3.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Training Configuration}{14}{subsubsection.3.3.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Model Selection}{14}{table.caption.2}\protected@file@percent }
-\citation{google_embeddinggemma_300m}
 \@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Common Hyperparameters for RoBERTa Fine-Tuning}}{15}{table.caption.2}\protected@file@percent }
 \newlabel{tab:roberta_params}{{2}{15}{Common Hyperparameters for RoBERTa Fine-Tuning}{table.caption.2}{}}
+\@writefile{toc}{\contentsline {paragraph}{Loss Function}{15}{table.caption.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Model Selection}{15}{equation.8}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.3}Proposed Approach 2: EmbeddingGemma-300m with XGBoost}{15}{subsubsection.3.3.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Embedding Generation with EmbeddingGemma-300m}{15}{subsubsection.3.3.3}\protected@file@percent }
+\citation{google_embeddinggemma_300m}
 \citation{chen2016xgboost}
+\@writefile{toc}{\contentsline {paragraph}{Embedding Generation with EmbeddingGemma-300m}{16}{subsubsection.3.3.3}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{XGBoost Classification}{16}{subsubsection.3.3.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Training Configuration}{16}{subsubsection.3.3.3}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Common Hyperparameters for XGBoost Training}}{16}{table.caption.3}\protected@file@percent }
-\newlabel{tab:xgboost_params}{{3}{16}{Common Hyperparameters for XGBoost Training}{table.caption.3}{}}
-\@writefile{toc}{\contentsline {paragraph}{Model Selection}{16}{table.caption.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.4}Evaluation Metrics}{17}{subsubsection.3.3.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Per-Class Metrics}{17}{subsubsection.3.3.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Overall Metrics}{18}{equation.9}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {4}Dataset Characteristics}{18}{section.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Class Distribution and Imbalance Analysis}{18}{subsection.4.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Textual Characteristics and Statistical Properties}{19}{subsection.4.2}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Comprehensive Text Statistics by Review Category}}{19}{table.caption.4}\protected@file@percent }
-\newlabel{tab:text_stats}{{4}{19}{Comprehensive Text Statistics by Review Category}{table.caption.4}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Representative Sample Analysis}{20}{subsection.4.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.4}Linguistic Patterns and Vocabulary Analysis}{23}{subsection.4.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.5}Domain-Specific Characteristics}{24}{subsection.4.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {5}Training Process Report}{24}{section.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Baseline Model: Bidirectional LSTM}{24}{subsection.5.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.1.1}Phase I: Hyperparameter Tuning (Grid Search)}{24}{subsubsection.5.1.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Selection Process}{24}{subsubsection.5.1.1}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Grid Search Results for Hyperparameter Tuning}}{24}{table.caption.5}\protected@file@percent }
-\newlabel{tab:grid_search}{{5}{24}{Grid Search Results for Hyperparameter Tuning}{table.caption.5}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Validation F1-Macro Scores across Grid Search Configurations}}{25}{figure.caption.6}\protected@file@percent }
-\newlabel{fig:grid_search_f1}{{1}{25}{Validation F1-Macro Scores across Grid Search Configurations}{figure.caption.6}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.1.2}Phase II: Training Execution \& Validation Performance}{25}{subsubsection.5.1.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Training Configuration}{25}{subsubsection.5.1.2}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Training and Validation Learning Curves (Loss/Accuracy) during Final Training. \textit  {Note: The x-axis is labeled as "Step" rather than "Global Step" due to a minor implementation issue; however, the correctness of visualization remains the same.}}}{25}{figure.caption.7}\protected@file@percent }
-\newlabel{fig:learning_curve}{{2}{25}{Training and Validation Learning Curves (Loss/Accuracy) during Final Training. \textit {Note: The x-axis is labeled as "Step" rather than "Global Step" due to a minor implementation issue; however, the correctness of visualization remains the same.}}{figure.caption.7}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Progression of Validation F1-Score over Epochs}}{26}{figure.caption.8}\protected@file@percent }
-\newlabel{fig:val_f1_final}{{3}{26}{Progression of Validation F1-Score over Epochs}{figure.caption.8}{}}
-\@writefile{toc}{\contentsline {paragraph}{Validation Metrics}{26}{figure.caption.8}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}Proposed Approach 1: Fine-Tuned RoBERTa}{26}{subsection.5.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.2.1}Phase I: Hyperparameter Tuning (Grid Search)}{26}{subsubsection.5.2.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Selection Process}{26}{subsubsection.5.2.1}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Comparison of Validation F1-Macro Scores across RoBERTa Grid Search Configurations}}{26}{figure.caption.9}\protected@file@percent }
-\newlabel{fig:roberta_grid_search}{{4}{26}{Comparison of Validation F1-Macro Scores across RoBERTa Grid Search Configurations}{figure.caption.9}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces Grid Search Results for RoBERTa Hyperparameter Tuning}}{26}{table.caption.10}\protected@file@percent }
-\newlabel{tab:roberta_grid_results}{{6}{26}{Grid Search Results for RoBERTa Hyperparameter Tuning}{table.caption.10}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.2.2}Phase II: Training Execution \& Validation Performance}{27}{subsubsection.5.2.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Training Configuration}{27}{subsubsection.5.2.2}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Training and Validation Learning Curves (Loss/Accuracy) for RoBERTa}}{27}{figure.caption.11}\protected@file@percent }
-\newlabel{fig:roberta_learning_curve}{{5}{27}{Training and Validation Learning Curves (Loss/Accuracy) for RoBERTa}{figure.caption.11}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Progression of Validation F1-Score over Epochs (RoBERTa)}}{27}{figure.caption.12}\protected@file@percent }
-\newlabel{fig:roberta_val_f1}{{6}{27}{Progression of Validation F1-Score over Epochs (RoBERTa)}{figure.caption.12}{}}
-\@writefile{toc}{\contentsline {paragraph}{Validation Metrics}{27}{figure.caption.12}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.3}Proposed Approach 2: EmbeddingGemma-300m with XGBoost}{28}{subsection.5.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.3.1}Phase I: Feature Extraction (Embedding Generation)}{28}{subsubsection.5.3.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.3.2}Phase II: Hyperparameter Tuning (Grid Search)}{28}{subsubsection.5.3.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Selection Process}{28}{subsubsection.5.3.2}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces Top XGBoost Hyperparameter Configurations}}{28}{table.caption.13}\protected@file@percent }
-\newlabel{tab:xgboost_top_configs}{{7}{28}{Top XGBoost Hyperparameter Configurations}{table.caption.13}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.3.3}Phase III: Classifier Training \& Validation Performance}{28}{subsubsection.5.3.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Training Configuration}{28}{subsubsection.5.3.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Validation Metrics}{29}{subsubsection.5.3.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {6}Results}{29}{section.6}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.1}Overall metrics}{29}{subsection.6.1}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {8}{\ignorespaces Overall test-set performance and inference efficiency. Acc = Accuracy (micro-F1). W-* = weighted average. M-* = macro average.}}{29}{table.caption.14}\protected@file@percent }
-\newlabel{tab:model_overall_metrics}{{8}{29}{Overall test-set performance and inference efficiency. Acc = Accuracy (micro-F1). W-* = weighted average. M-* = macro average}{table.caption.14}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.2}Per-class analysis (Metrics + Confusion matrices)}{30}{subsection.6.2}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {9}{\ignorespaces Per-class performance on the test set (P = Precision, R = Recall, F1 = F1-score).}}{30}{table.caption.15}\protected@file@percent }
-\newlabel{tab:per_class_metrics}{{9}{30}{Per-class performance on the test set (P = Precision, R = Recall, F1 = F1-score)}{table.caption.15}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {10}{\ignorespaces Confusion matrix for the LSTM model (test set).}}{30}{table.caption.16}\protected@file@percent }
-\newlabel{tab:cm_lstm}{{10}{30}{Confusion matrix for the LSTM model (test set)}{table.caption.16}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {11}{\ignorespaces Confusion matrix for the XGBoost model (test set).}}{31}{table.caption.17}\protected@file@percent }
-\newlabel{tab:cm_xgboost}{{11}{31}{Confusion matrix for the XGBoost model (test set)}{table.caption.17}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {12}{\ignorespaces Confusion matrix for the RoBERTa (fine-tuned) model (test set).}}{31}{table.caption.18}\protected@file@percent }
-\newlabel{tab:cm_roberta}{{12}{31}{Confusion matrix for the RoBERTa (fine-tuned) model (test set)}{table.caption.18}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {7}Discussion}{32}{section.7}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.1}LSTM vs RoBERTa and EmbeddingGemma + XGBoost}{32}{subsection.7.1}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {13}{\ignorespaces Error distribution for the LSTM model on examples where RoBERTa is correct.}}{32}{table.caption.19}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {14}{\ignorespaces Error distribution for the LSTM model on examples where EmbeddingGemma + XGBoost is correct.}}{32}{table.caption.20}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Main issue}{33}{table.caption.20}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{How this problem manifests}{34}{Item.46}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Practical implications}{34}{Item.46}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.2}EmbeddingGemma + XGBoost vs RoBERTa}{35}{subsection.7.2}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {15}{\ignorespaces XGBoost errors on examples where RoBERTa is correct.}}{35}{table.caption.21}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Main issue}{35}{table.caption.21}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{How this problem manifests}{35}{table.caption.21}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Root cause analysis}{36}{table.caption.21}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Practical implications}{36}{table.caption.21}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {8}Conclusion}{37}{section.8}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Training Configuration}{17}{subsubsection.3.3.3}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Common Hyperparameters for XGBoost Training}}{17}{table.caption.3}\protected@file@percent }
+\newlabel{tab:xgboost_params}{{3}{17}{Common Hyperparameters for XGBoost Training}{table.caption.3}{}}
+\@writefile{toc}{\contentsline {paragraph}{Loss Function: Cross-Entropy Loss}{17}{table.caption.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Model Selection}{17}{equation.9}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.4}Evaluation Metrics}{18}{subsubsection.3.3.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Per-Class Metrics}{18}{subsubsection.3.3.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Overall Metrics}{18}{equation.12}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4}Dataset Characteristics}{19}{section.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Class Distribution and Imbalance Analysis}{19}{subsection.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Textual Characteristics and Statistical Properties}{20}{subsection.4.2}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Comprehensive Text Statistics by Review Category}}{20}{table.caption.4}\protected@file@percent }
+\newlabel{tab:text_stats}{{4}{20}{Comprehensive Text Statistics by Review Category}{table.caption.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Representative Sample Analysis}{21}{subsection.4.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4}Linguistic Patterns and Vocabulary Analysis}{24}{subsection.4.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.5}Domain-Specific Characteristics}{25}{subsection.4.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5}Training Process Report}{25}{section.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Baseline Model: Bidirectional LSTM}{25}{subsection.5.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.1.1}Phase I: Hyperparameter Tuning (Grid Search)}{25}{subsubsection.5.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Selection Process}{25}{subsubsection.5.1.1}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Grid Search Results for Hyperparameter Tuning}}{25}{table.caption.5}\protected@file@percent }
+\newlabel{tab:grid_search}{{5}{25}{Grid Search Results for Hyperparameter Tuning}{table.caption.5}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Validation F1-Macro Scores across Grid Search Configurations}}{26}{figure.caption.6}\protected@file@percent }
+\newlabel{fig:grid_search_f1}{{1}{26}{Validation F1-Macro Scores across Grid Search Configurations}{figure.caption.6}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.1.2}Phase II: Training Execution \& Validation Performance}{26}{subsubsection.5.1.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Training Configuration}{26}{subsubsection.5.1.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Training and Validation Learning Curves (Loss/Accuracy) during Final Training. \textit  {Note: The x-axis is labeled as "Step" rather than "Global Step" due to a minor implementation issue; however, the correctness of visualization remains the same.}}}{26}{figure.caption.7}\protected@file@percent }
+\newlabel{fig:learning_curve}{{2}{26}{Training and Validation Learning Curves (Loss/Accuracy) during Final Training. \textit {Note: The x-axis is labeled as "Step" rather than "Global Step" due to a minor implementation issue; however, the correctness of visualization remains the same.}}{figure.caption.7}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Progression of Validation F1-Score over Epochs}}{27}{figure.caption.8}\protected@file@percent }
+\newlabel{fig:val_f1_final}{{3}{27}{Progression of Validation F1-Score over Epochs}{figure.caption.8}{}}
+\@writefile{toc}{\contentsline {paragraph}{Validation Metrics}{27}{figure.caption.8}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}Proposed Approach 1: Fine-Tuned RoBERTa}{27}{subsection.5.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.2.1}Phase I: Hyperparameter Tuning (Grid Search)}{27}{subsubsection.5.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Selection Process}{27}{subsubsection.5.2.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Comparison of Validation F1-Macro Scores across RoBERTa Grid Search Configurations}}{27}{figure.caption.9}\protected@file@percent }
+\newlabel{fig:roberta_grid_search}{{4}{27}{Comparison of Validation F1-Macro Scores across RoBERTa Grid Search Configurations}{figure.caption.9}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces Grid Search Results for RoBERTa Hyperparameter Tuning}}{27}{table.caption.10}\protected@file@percent }
+\newlabel{tab:roberta_grid_results}{{6}{27}{Grid Search Results for RoBERTa Hyperparameter Tuning}{table.caption.10}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.2.2}Phase II: Training Execution \& Validation Performance}{28}{subsubsection.5.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Training Configuration}{28}{subsubsection.5.2.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Training and Validation Learning Curves (Loss/Accuracy) for RoBERTa}}{28}{figure.caption.11}\protected@file@percent }
+\newlabel{fig:roberta_learning_curve}{{5}{28}{Training and Validation Learning Curves (Loss/Accuracy) for RoBERTa}{figure.caption.11}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Progression of Validation F1-Score over Epochs (RoBERTa)}}{28}{figure.caption.12}\protected@file@percent }
+\newlabel{fig:roberta_val_f1}{{6}{28}{Progression of Validation F1-Score over Epochs (RoBERTa)}{figure.caption.12}{}}
+\@writefile{toc}{\contentsline {paragraph}{Validation Metrics}{28}{figure.caption.12}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3}Proposed Approach 2: EmbeddingGemma-300m with XGBoost}{29}{subsection.5.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.3.1}Phase I: Feature Extraction (Embedding Generation)}{29}{subsubsection.5.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.3.2}Phase II: Hyperparameter Tuning (Grid Search)}{29}{subsubsection.5.3.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Selection Process}{29}{subsubsection.5.3.2}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces Top XGBoost Hyperparameter Configurations}}{29}{table.caption.13}\protected@file@percent }
+\newlabel{tab:xgboost_top_configs}{{7}{29}{Top XGBoost Hyperparameter Configurations}{table.caption.13}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.3.3}Phase III: Classifier Training \& Validation Performance}{29}{subsubsection.5.3.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Training Configuration}{29}{subsubsection.5.3.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Validation Metrics}{30}{subsubsection.5.3.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6}Results}{30}{section.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1}Overall metrics}{30}{subsection.6.1}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {8}{\ignorespaces Overall test-set performance and inference efficiency. Acc = Accuracy (micro-F1). W-* = weighted average. M-* = macro average.}}{30}{table.caption.14}\protected@file@percent }
+\newlabel{tab:model_overall_metrics}{{8}{30}{Overall test-set performance and inference efficiency. Acc = Accuracy (micro-F1). W-* = weighted average. M-* = macro average}{table.caption.14}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2}Per-class analysis (Metrics + Confusion matrices)}{31}{subsection.6.2}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {9}{\ignorespaces Per-class performance on the test set (P = Precision, R = Recall, F1 = F1-score).}}{31}{table.caption.15}\protected@file@percent }
+\newlabel{tab:per_class_metrics}{{9}{31}{Per-class performance on the test set (P = Precision, R = Recall, F1 = F1-score)}{table.caption.15}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {10}{\ignorespaces Confusion matrix for the LSTM model (test set).}}{31}{table.caption.16}\protected@file@percent }
+\newlabel{tab:cm_lstm}{{10}{31}{Confusion matrix for the LSTM model (test set)}{table.caption.16}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {11}{\ignorespaces Confusion matrix for the XGBoost model (test set).}}{32}{table.caption.17}\protected@file@percent }
+\newlabel{tab:cm_xgboost}{{11}{32}{Confusion matrix for the XGBoost model (test set)}{table.caption.17}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {12}{\ignorespaces Confusion matrix for the RoBERTa (fine-tuned) model (test set).}}{32}{table.caption.18}\protected@file@percent }
+\newlabel{tab:cm_roberta}{{12}{32}{Confusion matrix for the RoBERTa (fine-tuned) model (test set)}{table.caption.18}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {7}Discussion}{33}{section.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.1}LSTM vs RoBERTa and EmbeddingGemma + XGBoost}{33}{subsection.7.1}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {13}{\ignorespaces Error distribution for the LSTM model on examples where RoBERTa is correct.}}{33}{table.caption.19}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {14}{\ignorespaces Error distribution for the LSTM model on examples where EmbeddingGemma + XGBoost is correct.}}{33}{table.caption.20}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Main issue}{34}{table.caption.20}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{How this problem manifests}{35}{Item.46}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Practical implications}{35}{Item.46}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.2}EmbeddingGemma + XGBoost vs RoBERTa}{36}{subsection.7.2}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {15}{\ignorespaces XGBoost errors on examples where RoBERTa is correct.}}{36}{table.caption.21}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Main issue}{36}{table.caption.21}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{How this problem manifests}{36}{table.caption.21}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Root cause analysis}{37}{table.caption.21}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Practical implications}{37}{table.caption.21}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {8}Conclusion}{38}{section.8}\protected@file@percent }
 \bibstyle{plain}
 \bibdata{main}
 \bibcite{chen2016xgboost}{1}
 \bibcite{enevoldsen2025mmtebmassivemultilingualtext}{2}
-\@writefile{toc}{\contentsline {section}{\numberline {9}Group Contributions \& Resources}{38}{section.9}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {9.1}Group Contributions}{38}{subsection.9.1}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {16}{\ignorespaces Group Members and Contributions}}{38}{table.caption.22}\protected@file@percent }
-\newlabel{tab:contributions}{{16}{38}{Group Members and Contributions}{table.caption.22}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {9.2}Resources}{38}{subsection.9.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {9}Group Contributions \& Resources}{39}{section.9}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.1}Group Contributions}{39}{subsection.9.1}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {16}{\ignorespaces Group Members and Contributions}}{39}{table.caption.22}\protected@file@percent }
+\newlabel{tab:contributions}{{16}{39}{Group Members and Contributions}{table.caption.22}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.2}Resources}{39}{subsection.9.2}\protected@file@percent }
 \bibcite{facebookai_roberta_base}{3}
 \bibcite{google_embeddinggemma_300m}{4}
 \bibcite{hochreiter1997long}{5}
@@ -172,4 +175,4 @@
 \bibcite{viggiato2021causes}{14}
 \bibcite{wingfield2007}{15}
 \xdef \mintedoldcachechecksum{\detokenize{\minted@cachechecksum }}
-\gdef \@abspage@last{41}
+\gdef \@abspage@last{42}
