@@ -37,10 +37,10 @@
 \contentsline {subsubsection}{\numberline {3.3.2}Proposed Approach 1: Fine-Tuned RoBERTa}{14}{subsubsection.3.3.2}%
 \contentsline {paragraph}{Network Architecture}{14}{subsubsection.3.3.2}%
 \contentsline {paragraph}{Data Preprocessing and Tokenization}{14}{subsubsection.3.3.2}%
-\contentsline {paragraph}{Training Configuration}{14}{subsubsection.3.3.2}%
+\contentsline {paragraph}{Training Configuration}{15}{subsubsection.3.3.2}%
 \contentsline {paragraph}{Loss Function}{15}{table.caption.2}%
 \contentsline {paragraph}{Model Selection}{15}{equation.8}%
-\contentsline {subsubsection}{\numberline {3.3.3}Proposed Approach 2: EmbeddingGemma-300m with XGBoost}{15}{subsubsection.3.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.3}Proposed Approach 2: EmbeddingGemma-300m with XGBoost}{16}{subsubsection.3.3.3}%
 \contentsline {paragraph}{Embedding Generation with EmbeddingGemma-300m}{16}{subsubsection.3.3.3}%
 \contentsline {paragraph}{XGBoost Classification}{16}{subsubsection.3.3.3}%
 \contentsline {paragraph}{Training Configuration}{17}{subsubsection.3.3.3}%

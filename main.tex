@@ -427,11 +427,11 @@ Loss Function & NLLLoss (3-class) \\
 \end{tabular}
 \end{table}
 
-\paragraph{Loss Function} The optimization objective for the baseline Bi-LSTM model is the Negative Log-Likelihood Loss (NLLLoss). It is important to note that NLLLoss and Cross-Entropy Loss are mathematically equivalent in terms of the final optimization goal; the distinction lies primarily in the implementation within deep learning frameworks. While Cross-Entropy typically performs the \textit{LogSoftmax} operation internally, NLLLoss expects the network's final layer to have already applied \textit{LogSoftmax}. For a single sample $i$, the loss is defined as:
+\paragraph{Loss Function} The optimization objective for the baseline Bi-LSTM model is the Negative Log-Likelihood Loss (NLLLoss). It is important to note that NLLLoss and Cross-Entropy Loss are mathematically equivalent in terms of the final optimization goal; the distinction lies primarily in the implementation within deep learning frameworks. While Cross-Entropy typically performs the \textit{LogSoftmax} operation internally, NLLLoss expects the network's final layer to have already applied \textit{LogSoftmax}. For a batch of $N$ samples with 3 sentiment classes, the loss is defined as:
 \begin{equation}
-\mathcal{L}_i = - \log(p_{i, y_i})
+\mathcal{L} = -\frac{1}{N} \sum_{i=1}^{N} \log(p_{i, y_i})
 \end{equation}
-where $y_i \in \{0, 1, 2\}$ represents the ground truth sentiment class and $p_{i, y_i}$ is the probability assigned to that class by the model.
+where $y_i \in \{0, 1, 2\}$ represents the ground truth sentiment class for sample $i$, and $p_{i, y_i}$ is the predicted probability for that class (extracted from the model's 3-dimensional output vector after LogSoftmax).
 
 \paragraph{Model Selection}
 For each run, choose the best F1-Macro model during validation step for the final evaluation at the end of training.
